@@ -1,0 +1,968 @@
+{
+	"info": {
+		"_postman_id": "d67869ee-8329-4648-a93e-6bac57bb4c14",
+		"name": "Seidik E-Commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46563624",
+		"_collection_link": "https://speeding-capsule-2516361.postman.co/workspace/Mr.-Labu's-Workspace~a0a19072-c1cd-4710-8246-bf2baee24940/collection/46563624-d67869ee-8329-4648-a93e-6bac57bb4c14?action=share&source=collection_link&creator=46563624"
+	},
+	"item": [
+		{
+			"name": "Registration",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customer_type\": \"Retail\",\r\n  \"first_name\": \"John\",\r\n  \"last_name\": \"Doe\",\r\n  \"email\": \"joni@example.com\",\r\n  \"phone_number\": \"+27123456789\",\r\n  \"password\": \"SecurePass123!\",\r\n  \"confirm_password\": \"SecurePass123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/accounts/register/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register (trade)",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"customer_type\": \"Trade\",\r\n  \"first_name\": \"Jane\",\r\n  \"last_name\": \"Smith\",\r\n  \"email\": \"jane.smith@company.com\",\r\n  \"phone_number\": \"+27987654321\",\r\n  \"password\": \"SecurePass123!\",\r\n  \"confirm_password\": \"SecurePass123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/accounts/register/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "billing-address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"company_name\": \"ABC Company\",\r\n  \"vat_number\": \"4123456789\",\r\n  \"company_registration\": \"2021/123456/07\",\r\n  \"po_number\": \"PO-2025-001\",\r\n  \"address_line_1\": \"123 Main Street\",\r\n  \"address_line_2\": \"Suite 100\",\r\n  \"city\": \"Johannesburg\",\r\n  \"postal_code\": \"2000\",\r\n  \"province\": \"Gauteng\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/accounts/register/billing-address/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"register",
+								"billing-address",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delivery-address",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"company_name\": \"ABC Company\",\r\n  \"address_line_1\": \"456 Business Park\",\r\n  \"address_line_2\": \"Building B\",\r\n  \"city\": \"Pretoria\",\r\n  \"postal_code\": \"0001\",\r\n  \"province\": \"Gauteng\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/accounts/register/delivery-address/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"register",
+								"delivery-address",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "trade-info",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "jane@company.com",
+									"type": "text"
+								},
+								{
+									"key": "business_type",
+									"value": "Electrician",
+									"type": "text"
+								},
+								{
+									"key": "monthly_statement",
+									"value": " Yes, required monthly",
+									"type": "text"
+								},
+								{
+									"key": "procurement_no",
+									"value": " PROC123456",
+									"type": "text"
+								},
+								{
+									"key": "documents",
+									"type": "file",
+									"src": "/C:/Users/mdjon/OneDrive/Pictures/Product Image/3-1.jpg"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/api/accounts/register/trade-info/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"register",
+								"trade-info",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify-email",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"jane@company.com\",\r\n  \"otp\": \"21291208\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/accounts/verify-email/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"verify-email",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resend-otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"jane@company.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/accounts/resend-otp/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"resend-otp",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"jane@company.com\",\r\n  \"password\": \"SecurePass123!\",\r\n  \"remember_me\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/accounts/login/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"refresh\": \"<refresh_token>\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/accounts/logout/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"logout",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "token-refresh",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"refresh\": \"<refresh_token>\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/accounts/token/refresh/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"token",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"john.doe@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/accounts/forgot-password/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"forgot-password",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verify-reset-otp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"otp\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/accounts/verify-reset-otp/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"verify-reset-otp",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset-password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"john.doe@example.com\",\r\n  \"otp\": \"12345678\",\r\n  \"new_password\": \"NewSecurePass123!\",\r\n  \"confirm_password\": \"NewSecurePass123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/accounts/reset-password/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"reset-password",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change-password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"old_password\": \"SecurePass123!\",\r\n  \"new_password\": \"#jvai2025\",\r\n  \"confirm_password\": \"#jvai2025\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/accounts/change-password/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"change-password",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/accounts/profile/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"profile",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{access_token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"first_name\": \"Michael\",\r\n  \"last_name\": \"Johnson\",\r\n  \"phone_number\": \"+27711234567\",\r\n  \"billing_addresses\": [\r\n    {\r\n      \"id\": \"523c25d9-ac41-4f05-b921-af4852940961\",\r\n      \"company_name\": \"Elite Electrical Solutions\",\r\n      \"vat_number\": \"4123456789\",\r\n      \"company_registration\": \"2020/987654/07\",\r\n      \"po_number\": \"PO-ELEC-001\",\r\n      \"address_line_1\": \"15 Industrial Park\",\r\n      \"address_line_2\": \"Unit 3B\",\r\n      \"city\": \"Port Elizabeth\",\r\n      \"postal_code\": \"6001\",\r\n      \"province\": \"Eastern Cape\"\r\n    }\r\n  ],\r\n  \"delivery_addresses\": [\r\n    {\r\n      \"id\": \"752903c2-1cd7-4662-8174-c542ab5735a4\",\r\n      \"company_name\": \"Elite Electrical Solutions\",\r\n      \"vat_number\": \"4123456789\",\r\n      \"company_registration\": \"2020/987654/07\",\r\n      \"po_number\": \"PO-ELEC-001\",\r\n      \"address_line_1\": \"15 Industrial Park\",\r\n      \"address_line_2\": \"Warehouse Section\",\r\n      \"city\": \"Port Elizabeth\",\r\n      \"postal_code\": \"6001\",\r\n      \"province\": \"Eastern Cape\"\r\n    }\r\n  ],\r\n  \"trade_information\": {\r\n    \"business_type\": \"Electrician\",\r\n    \"monthly_statement\": \"R120000\",\r\n    \"procurement_no\": \"ELEC-PROC-2025-789\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/accounts/profile/update/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"accounts",
+								"profile",
+								"update",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "contacts",
+			"item": [
+				{
+					"name": "contact-us",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john.doe@example.com\",\r\n  \"phone\": \"+27123456789\",\r\n  \"company_name\": \"ABC Enterprises\",\r\n  \"message\": \"I would like to inquire about bulk pricing for your products. Please contact me at your earliest convenience.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/api/contact/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"contact",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "categories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/products/categories/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"categories",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "categories (pagination & sort)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/products/categories/?page=1&page_size=20&sort=az",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"categories",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "page_size",
+									"value": "20"
+								},
+								{
+									"key": "sort",
+									"value": "az"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "subcategories",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/products/categories/:category_id/subcategories/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"categories",
+								":category_id",
+								"subcategories",
+								""
+							],
+							"variable": [
+								{
+									"key": "category_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "subcategories (pagination & sort)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/products/categories/:category_id/subcategories/?page=1&page_size=5&sort=za",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"categories",
+								":category_id",
+								"subcategories",
+								""
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "page_size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "za"
+								}
+							],
+							"variable": [
+								{
+									"key": "category_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "category-wise-products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/products/categories/:category_id/subcategories/:subcategory_id/products/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"categories",
+								":category_id",
+								"subcategories",
+								":subcategory_id",
+								"products",
+								""
+							],
+							"variable": [
+								{
+									"key": "category_id",
+									"value": "2"
+								},
+								{
+									"key": "subcategory_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "category-wise-products (filter)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/products/categories/:category_id/subcategories/:subcategory_id/products/?brand=Xiaomi&sort=az&page=1&page_size=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"categories",
+								":category_id",
+								"subcategories",
+								":subcategory_id",
+								"products",
+								""
+							],
+							"query": [
+								{
+									"key": "brand",
+									"value": "Xiaomi"
+								},
+								{
+									"key": "sort",
+									"value": "az"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "page_size",
+									"value": "1"
+								}
+							],
+							"variable": [
+								{
+									"key": "category_id",
+									"value": "2"
+								},
+								{
+									"key": "subcategory_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all-products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/products/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all-products-with-q",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/products/?brand=xiaomi&category=2&subcategory=2&sort=za&page=1&page_size=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								""
+							],
+							"query": [
+								{
+									"key": "brand",
+									"value": "xiaomi"
+								},
+								{
+									"key": "category",
+									"value": "2"
+								},
+								{
+									"key": "subcategory",
+									"value": "2"
+								},
+								{
+									"key": "sort",
+									"value": "za"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "page_size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product-details",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/products/:product_id/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								":product_id",
+								""
+							],
+							"variable": [
+								{
+									"key": "product_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search-products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/products/search/?q=xiaomi&page=1&page_size=1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"search",
+								""
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "xiaomi"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "page_size",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "brand-list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/products/brands/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"products",
+								"brands",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": ""
+		},
+		{
+			"key": "access_token",
+			"value": ""
+		}
+	]
+}
